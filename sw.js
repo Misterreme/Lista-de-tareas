@@ -1,8 +1,8 @@
 const CACHE_NAME = "tareas-app-cache-v1";
 const urlsToCache = [
   "/",
-  "/index.html",
-  "/manifest.json",
+  "index.html",
+  "manifest.json",
   "styles/styles.css", // Si tienes un archivo CSS
 //   `/icon-192x192.png`,
 //   "/icon-512x512.png"
