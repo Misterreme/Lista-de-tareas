@@ -3,7 +3,8 @@ const urlsToCache = [
   "/",
   "index.html",
   "manifest.json",
-  "styles/styles.css", // Si tienes un archivo CSS
+  "styles/styles.css",
+  "index.js" // Si tienes un archivo CSS
 //   `/icon-192x192.png`,
 //   "/icon-512x512.png"
 ];
