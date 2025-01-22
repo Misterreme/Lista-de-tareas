@@ -9,12 +9,15 @@ const urlsToCache = [
 ];
 
 self.addEventListener("install", (event) => {
-  event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      return cache.addAll(urlsToCache);
-    })
-  );
-});
+    event.waitUntil(
+      caches.open(CACHE_NAME).then((cache) => {
+        return cache.addAll(urlsToCache).catch((error) => {
+          console.error("Error al guardar en caché:", error);
+        });
+      })
+    );
+  });
+  
 
 self.addEventListener("fetch", (event) => {
   event.respondWith(
