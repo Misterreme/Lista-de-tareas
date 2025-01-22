@@ -1,46 +1,26 @@
-const CACHE_NAME = "tareas-app-cache-v1";
+const CACHE_NAME = "v1_cache_lista_tareas";
 const urlsToCache = [
-  "/",
-  "index.html",
-  "manifest.json",
-  "styles/styles.css",
-  "index.js" // Si tienes un archivo CSS
-//   `/icon-192x192.png`,
-//   "/icon-512x512.png"
+  "./",               // La raíz del sitio
+  "./index.html",     // Archivo principal
+  "./styles.css",     // Archivo CSS
+  "./index.js"      // Archivo JS principal
+//   "./icon-192x192.png", // Icono pequeño
+//   "./icon-512x512.png"  // Icono grande
 ];
 
+// Evento de instalación del Service Worker
 self.addEventListener("install", (event) => {
-    event.waitUntil(
-      caches.open(CACHE_NAME).then((cache) => {
-        return cache.addAll(urlsToCache).catch((error) => {
-          console.error("Error al guardar en caché:", error);
-        });
-      })
-    );
-  });
-  
-
-self.addEventListener("fetch", (event) => {
-  event.respondWith(
-    caches.match(event.request).then((response) => {
-      return response || fetch(event.request);
-    })
-  );
-});
-
-self.addEventListener("activate", (event) => {
-  const cacheWhitelist = [CACHE_NAME];
   event.waitUntil(
-    caches.keys().then((cacheNames) => {
+    caches.open(CACHE_NAME).then((cache) => {
+      console.log("Intentando guardar en caché los archivos...");
       return Promise.all(
-        cacheNames.map((cacheName) => {
-          if (!cacheWhitelist.includes(cacheName)) {
-            return caches.delete(cacheName);
-          }
+        urlsToCache.map((url) => {
+          console.log(`Intentando almacenar: ${url}`);
+          return cache.add(url).catch((error) => {
+            console.error(`Error al almacenar ${url}:`, error);
+          });
         })
       );
     })
   );
 });
-console.log("Service Worker cargado correctamente");
-
