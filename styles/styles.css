@@ -1,0 +1,131 @@
+:root {
+    --taskBackground: #bcb9b957;
+    --buttonColor: #bc0606b4;
+    --textColor: #93296b71;
+    --textBtnColor: #c4c3c7ed;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    place-self: center;
+    width: 90%;
+}
+
+.textsContainer {
+    text-align: center;
+}
+
+#error {
+    color: red;
+    display: none;
+    font-weight: bold;
+}
+
+.inputsContainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#taskInput {
+    /* background-color: var(--taskBackground);
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    height: 25px;
+    margin-left: 20px;
+    margin-right: 10px;
+    padding: 10px;
+    text-align: center;
+    width: 300px; */
+
+    width: 300px;
+  padding: 10px 5px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s ease;
+  margin-right: 10px;
+  padding: 10px;
+}
+
+#taskInput:focus {
+    outline: none;
+}
+
+#taskInput::placeholder {
+    color: var(--textColor);
+    font-weight: bold;
+}
+
+#addBtn {
+    background-color: var(--buttonColor);
+    border: none;
+    border-radius: 8px;
+    color: #fff;;
+    cursor: pointer;
+    font-weight: bold;
+    height: 45px;
+    padding: 15px;
+}
+
+#addBtn:active {
+    background-color: #bc0606;
+}
+
+#taskList {
+    font-weight: bold;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+#taskList li {
+    background-color: var(--taskBackground);
+    border-radius: 8px;
+    margin: 20px;
+    padding: 10px;
+}
+
+#deleteButton {
+    background-color: #bc0606;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    position: absolute;
+    right: 130px;
+}
+
+@media (max-width: 640px) {
+    #addBtn {
+        font-size: 15px;
+    }
+
+    #taskList {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #taskList li {
+        width: 335px;
+        position: relative;
+        right: 60px;
+    }
+
+    #deleteButton {
+        right: 10px;
+    }
+    
+
+}
+
+
