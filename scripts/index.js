@@ -31,4 +31,5 @@ addButton.addEventListener("click", () => {
     liElement.append(removeBtn);
     taskList.append(liElement);
 
+    inputTask.value = ""
 })
