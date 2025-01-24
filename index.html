@@ -1,41 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@200..700&family=Playwrite+PT+Guides&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
-    <title>Lista de tareas</title>
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#2196f3">
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@200..700&family=Playwrite+PT+Guides&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+  <title>Lista de tareas</title>
 </head>
 <body>
-    <div class="main-container">
-        <div class="textsContainer">
-            <h1 class="title">Lista de tareas</h1>
-            <p id="error">Maximo de tareas alcanzado</p>
-        </div>
-
-        <div class="inputsContainer">
-            <input type="text" id="taskInput" placeholder="Agrega una tarea">
-            <button id="addBtn">Agregar</button>
-        </div>
-
-        <ul id="taskList">
-        </ul>
+  <div class="mainContainer">
+    <div class="textsContainer">
+      <h1 class="title">
+        Lista de tareas</h1>
+      <p class="errorMessage" id="errorMessage">
+        ¡Max elements!
+      </p>
     </div>
-    <script src="scripts/index.js"></script>
     
-<script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('sw.js').then(() => {
-      console.log('Service Worker registrado.');
-    }).catch((error) => {
-      console.log('Error al registrar el Service Worker:', error);
-    });
-  }
-</script>
+    <div class="inputContainer">
+      <input id="taskInput" type="text">
+      <button id="addTaskButton">Añadir</button>
+    </div>
+    
+    <ul id="taskList">
+    </ul>
+     
+  </div>
+  <script src="index.js"></script>
 </body>
 </html>

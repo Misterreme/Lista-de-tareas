@@ -1,36 +1,34 @@
-const list = document.getElementById("taskList");
-const addButton = document.getElementById("addBtn");
-const input = document.getElementById("taskInput");
-const error = document.getElementById("error")
+const taskList = document.getElementById("taskList");
+const inputTask = document.getElementById("taskInput");
+const addButton = document.getElementById("addTaskButton");
+const errorMessage = document.getElementById("errorMessage");
 
 addButton.addEventListener("click", () => {
-    if (list.children.length === 6) {
-        error.textContent = "Maximo de tareas alcanzado"
-        error.style.display = "block"
-        return;
-    } 
-
-    if (input.value.trim() === "") {
-        error.textContent = "No añadiste nada pendejo";
-        error.style.display = "block"
-        return;
+    if (inputTask.value.trim() === "") {
+        errorMessage.textContent = "No puedes dejar este campo vacio";
+        errorMessage.style.display = "block";
+        return; 
     }
 
-    error.style.display = "none"
-    const liElement = document.createElement("li");
-    liElement.textContent = input.value;
+    if (taskList.children.length === 6) {
+        errorMessage.textContent = "¡Maximo de tareas alcanzado!";
+        errorMessage.style.display = "block";
+        return;
+    }
     
-    const removeButton = document.createElement("button");
-    removeButton.setAttribute("id", "deleteButton");
-    removeButton.textContent = "X";
-    removeButton.addEventListener("click", () => {
-        list.lastElementChild.remove();
-        error.style.display = "none";
+    const liElement = document.createElement("li");
+    liElement.textContent = inputTask.value;
+    errorMessage.style.display = "none"
+    
+    const removeBtn = document.createElement("button");
+    removeBtn.textContent = "X";
+    removeBtn.setAttribute("class", "removeBtn");
+    removeBtn.addEventListener("click", () => {
+        taskList.lastElementChild.remove();
+        errorMessage.style.display = "none"
     })
+    
+    liElement.append(removeBtn);
+    taskList.append(liElement);
 
-    liElement.append(removeButton);
-    list.append(liElement);
-
-    input.value = ""
 })
-
