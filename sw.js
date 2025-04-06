@@ -4,7 +4,7 @@ const urlsToCache = [
   "./index.html",     // Archivo principal
   "styles/styles.css",     // Archivo CSS
   "scripts/index.js",       // Archivo JS principal
-  "assets/image.png" // Icono pequeño
+  "assets/favicon.png" // Icono pequeño
 ];
 
 // Evento de instalación del Service Worker
