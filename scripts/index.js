@@ -20,7 +20,7 @@ addButton.addEventListener("click", (event) => {
         return 
     } 
 
-    if (taskList.children.length === 8) {
+    if (taskList.children.length === 6) {
         errorMessage.textContent = "Maximum number of tasks reached";
         errorMessage.style.display = "block";
         return
