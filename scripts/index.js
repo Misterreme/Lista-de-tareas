@@ -35,8 +35,9 @@ addButton.addEventListener("click", (event) => {
     const removeBtn = document.createElement("button");
     removeBtn.textContent = "X"
     removeBtn.setAttribute("class", "remove-button");
-    removeBtn.addEventListener("click", () => {
-        taskList.lastElementChild.remove();
+    removeBtn.addEventListener("click", (event) => {
+        // taskList.lastElementChild.remove()
+        event.target.parentElement.remove();
         errorMessage.style.display = "none"
     })
 
