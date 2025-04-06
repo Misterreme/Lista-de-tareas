@@ -11,32 +11,41 @@
     <link rel="icon" type="image/png" href="assets/favicon.png">
 </head>
 <body>
-    <div class="main-container">
-        <h1 class="title">Task List</h1>
-
-        <div class="task-container">
-            <div class="input-container">
-                <input class="task-input" id="task-input" type="text" placeholder="Wash clothes" maxlength="40">
-                <button class="add-task-button" id="add-button">Add</button>
-            </div>
-            
-            <h2 class="error-message" id="error-message">Hola</h2>
-            <ul class="task-list" id="task-list">
-                <li id="firts-element">Welcome 😀
-                    <button id="remove-button" class="remove-button">X</button>
-                </li>
-            </ul>
-        </div>
+  <nav class="navbar">
+    <div class="buttons-container">
+      <a href="https://misterreme.github.io/Calculadora-de-descuento/">
+        <!-- <button class="nav-button">Super calculator</button> -->
+         <img src="assets/percentage-sign.svg" alt="Percentage Calculator" class="nav-link-img">
+      </a>
+        <button class="theme-button"></button>
     </div>
-    <script src="scripts/index.js"></script>
-    <script>
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('sw.js').then(() => {
-          console.log('Service Worker registrado.');
-        }).catch((error) => {
-          console.log('Error al registrar el Service Worker:', error);
-        });
-      }
-    </script>
+  </nav>
+  <div class="main-container">
+      <h1 class="title">Task List</h1>
+
+      <div class="task-container">
+          <div class="input-container">
+              <input class="task-input" id="task-input" type="text" placeholder="Wash clothes" maxlength="40">
+              <button class="add-task-button" id="add-button">Add</button>
+          </div>
+          
+          <h2 class="error-message" id="error-message">Hola</h2>
+          <ul class="task-list" id="task-list">
+              <li id="firts-element">Welcome 😀
+                  <button id="remove-button" class="remove-button">X</button>
+              </li>
+          </ul>
+      </div>
+  </div>
+  <script src="scripts/index.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js').then(() => {
+        console.log('Service Worker registrado.');
+      }).catch((error) => {
+        console.log('Error al registrar el Service Worker:', error);
+      });
+    }
+  </script>
 </body>
 </html>
