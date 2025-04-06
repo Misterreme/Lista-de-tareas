@@ -57,7 +57,7 @@ body {
   border-radius: 50%;
   border: none;
   background-color: light-dark(white, white);
-  background-image: url("assets/dark-theme.svg");
+  background-image: url("../assets/dark-theme.svg");
   background-position: center center;
   background-size: 30px;
   background-repeat: no-repeat;
