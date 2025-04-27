@@ -1,0 +1,237 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100dvw;
+    height: 100dvh;
+    font-family: sans-serif;
+    background: light-dark(whitesmoke, #1a1a1a);
+}
+
+.main-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.task-section {
+    width: 40%;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: light-dark(white, #2d2d2d);
+    box-shadow: 0 0 5px light-dark( #1a1a1a, rgb(139, 138, 138));
+    position: absolute;
+    top: 30%;
+    left: 30%;
+}
+
+.task-section-head {
+    width: 100%;
+    display: flex;
+    padding: 10px;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 20px 0;
+}
+
+.task-section-head .title {
+    font-size: 2em;
+    color: light-dark(black, #66cc66);
+}
+
+.error-message {
+    display: none;
+    color: red;
+    font-weight: bold;
+    font-size: 1.3em;
+    text-align: center;
+}
+
+.task-section-head button {
+    width: 80px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: whitesmoke;
+    position: relative;
+    cursor: pointer;
+    border: none;
+    position: relative;
+}
+
+.task-section-head .icon {
+    position: absolute;
+    z-index: 1;
+    width: 28px;
+    height: 28px;
+    border-radius: 20px;
+}
+
+.sun {
+    background-image: url("assets/icons/sun-icon.png");
+    background-size: 40px 40px;
+    background-position: center center;
+    top: 15%;
+    left: 7%;
+    /* border: 1px solid red; */
+}
+
+.moon {
+    background-image: url("assets/icons/moon-icon.png");
+    background-size: 40px 40px;
+    background-position: center center;
+    top: 10%;
+    right: 5%;
+    /* border: 1px solid red; */
+}
+
+.task-section-head button .toggle-ball {
+    position: absolute;
+    border-radius: 100%;
+    top: 6%;
+    left: 4%;
+    background-color: light-dark(rgba(173, 167, 167), #4db84d);
+    width: 35px;
+    height: 35px;
+    z-index: 1;
+    transition: all 0.3s;
+}
+
+.dark .toggle-ball {
+    transform: translateX(40px);
+}
+
+.task-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.task-form input {
+    width: 100%;
+    height: 50px;
+    border-radius: 8px;
+    border: none;
+    background-color: whitesmoke;
+    color: light-dark(#2d2d2d, #2d2d2d);
+    padding: 5px 15px;
+    font-size: 1.1em;
+    border: 3px solid transparent;
+    transition: border 0.8s;
+}
+
+.task-form .placeholder-error::placeholder {
+    color: red;
+    font-weight: bold;
+}
+
+.task-form input:focus {
+    outline: none;
+    border: 3px solid light-dark(blue, #99ff99);
+}
+
+.task-form button {
+    width: 100%;
+    height: 40px;
+    border-radius: 8px;
+    border: none;
+    background-color: light-dark(whitesmoke, #99ff99);
+    color: light-dark(black, #1a1a1a);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: bold;
+    font-size: 1em;
+    gap: 3px;
+    margin: 0 0 0 0;
+}
+
+.task-form button img {
+    width: 35px;
+}
+
+.task-form button:active {
+    background: light-dark(rgb(230, 226, 226), #4db84d);
+}
+
+.task-list {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.task-list li {
+    width: 100%;
+    background-color: light-dark(whitesmoke,  #99ff99);
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    min-height: fit-content;
+    font-weight: 600;
+    font-size: 1.2em;
+    margin: 0 0 0 0;
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    white-space: pre-wrap;
+}
+
+.task-list li:nth-of-type(1) {
+    margin: 20px 0 0 0;
+}
+
+.task-list li .buttons-container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin: 0 0 0 0;
+    cursor: pointer;
+}
+
+.task-list li .buttons-container .edit-button {
+    width: 30px;
+    height: 30px;
+    background-image: url("assets/icons/edit-icon.png");
+    background-size: 30px 30px;
+}
+
+.task-list li .buttons-container .delete-button {
+    width: 30px;
+    height: 30px;
+    background-image: url("assets/icons/remove-icon.webp");
+    background-size: 30px 30px;
+}
+
+@media (max-width: 640px) {
+    .main-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .task-section {
+        width: 90%;
+        position: initial;
+    }
+}

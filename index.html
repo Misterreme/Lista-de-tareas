@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="assets/icons/add-icon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App - Organiza tu día con facilidad</title>
+    <meta name="description" content="Esta es una aplicación para gestionar tus tareas diarias. Organiza tu vida fácilmente.">
+    <meta name="keywords" content="gestión de tareas, organización, productividad, aplicación de tareas">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Organiza tus tareas de manera eficiente">
+    <meta property="og:description" content="Gestiona tus tareas con esta app sencilla y eficaz para mejorar tu productividad.">
+    <meta property="og:image" content="assets\images\og-image.png">
+</head>
+<body>
+    <main class="main-container">
+        <section class="task-section">
+            <div class="task-section-head">
+                <h1 class="title">To Do App</h1>
+
+                <button class="toggle-theme" id="toggle-theme" aria-label="Toggle Theme Button">
+                    <span class="icon sun"></span>
+                    <span class="icon moon"></span>
+                    <span class="toggle-ball dark"></span>
+                </button>
+            </div>
+
+            <p class="error-message" id="error-message">Error</p>
+
+            <form action="/" class="task-form" id="task-form">
+                <input type="text" class="task-input" id="task-input" placeholder="" maxlength="30">
+                <button class="add-button" id="add-button"><img src="assets/icons/add-icon.png" alt="Agregar tarea icon"><span>Añadir</span></button>
+            </form>
+            <ul class="task-list" id="task-list">
+            </ul>
+        </section>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>
