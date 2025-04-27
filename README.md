@@ -10,7 +10,7 @@ Una aplicación simple de lista de tareas para ayudarte a organizar tu día de m
 
 ## 📸 Vista previa
 
-![Preview](assets/images/preview-img.png);
-![Link](https://misterreme.github.io/Lista-de-tareas/);
+![Preview](assets/images/preview-img.png)
+![Link](https://misterreme.github.io/Lista-de-tareas/)
 
 ## 🛠️
